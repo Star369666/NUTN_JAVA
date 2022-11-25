@@ -1,0 +1,73 @@
+public class Wizard {
+    private String Name;
+    private int Life;
+    private int Magic;
+
+    public Wizard() {}
+
+    public Wizard(String name, int life, int magic) {
+        this.Name = name;
+        this.Life = life;
+        this.Magic = magic;
+    }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
+    public void setLife(int life) {
+        this.Life = life;
+    }
+
+    public void setMagic(int magic) {
+        this.Magic = magic;
+    }
+
+    public String getName() {
+        return this.Name;
+    }
+
+    public int getLift() {
+        return this.Life;
+    }
+
+    public int getMagic() {
+        return this.Magic;
+    }
+
+    public void SmallFire(Warrior in) {
+        final int magic_cost = 25;
+        final int attack_warrior = 40;
+
+        if(this.Magic < magic_cost) {
+            System.out.print("魔力不足，攻擊無效!\n");
+        }
+        else {
+            this.Magic -= magic_cost;
+            in.setLife(in.getLift() - attack_warrior);
+            System.out.print(in.getName()+"被"+this.Name+"打了" + attack_warrior + "滴血\n");
+            if(in.getLift() <= 0) {
+                System.out.print(in.getName()+"被"+this.Name+"打死了\n");
+                System.exit(0);
+            }
+        }
+    }
+
+    public void SmallFire(Wizard in) {
+        final int magic_cost = 25;
+        final int attack_wizard = 60;
+
+        if(this.Magic < magic_cost) {
+            System.out.print("魔力不足，攻擊無效!\n");
+        }
+        else {
+            this.Magic -= magic_cost;
+            in.setLife(in.getLift() - attack_wizard);
+            System.out.print(in.getName()+"被"+this.Name+"打了" + attack_wizard + "滴血\n");
+            if(in.getLift() <= 0) {
+                System.out.print(in.getName()+"被"+this.Name+"打死了\n");
+                System.exit(0);
+            }
+        }
+    }
+}
