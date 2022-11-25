@@ -1,0 +1,46 @@
+public class Role {
+    private String Name;
+    private int Life;
+    private int Magic;
+
+    Role() {}
+
+    Role(String name, int life, int magic) {
+        this.Name = name;
+        this.Life = life;
+        this.Magic = magic;
+    }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
+    public void setLife(int life) {
+        this.Life = life;
+    }
+
+    public void setMagic(int magic) {
+        this.Magic = magic;
+    }
+
+    public String getName() {
+        return this.Name;
+    }
+
+    public int getLift() {
+        return this.Life;
+    }
+
+    public int getMagic() {
+        return this.Magic;
+    }
+
+    public void Drink(Drug potion) {
+        if(potion instanceof RedDrug) {
+            setLife(getLift() + ((RedDrug)potion).getAddLife());
+        }
+        else {
+            setMagic(getMagic() + ((BlueDrug)potion).getAddMagic());
+        }
+    }
+}
