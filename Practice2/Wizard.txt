@@ -1,0 +1,48 @@
+public class Wizard extends Role {
+    public Wizard() {}
+
+    public Wizard(String name, int life, int magic) {
+        super(name, life, magic);
+    }
+
+    public void SmallFire(Warrior warrior) {
+        final int magic_cost = 25;
+        final int attack_warrior = 40;
+
+        if(this.getMagic() < magic_cost) {
+            System.out.print("魔力不足，攻擊無效!\n");
+        }
+        else {
+            setMagic(getMagic() - magic_cost);
+            warrior.setLife(warrior.getLift() - attack_warrior);
+            System.out.print(warrior.getName()+"被"+getName()+"打了" + attack_warrior + "滴血\n");
+            if(warrior.getLift() <= 0) {
+                System.out.print(warrior.getName()+"被"+getName()+"打死了\n");
+                System.exit(0);
+            }
+        }
+    }
+
+    public void SmallFire(Wizard wizard) {
+        final int magic_cost = 25;
+        final int attack_wizard = 60;
+
+        if(getMagic() < magic_cost) {
+            System.out.print("魔力不足，攻擊無效!\n");
+        }
+        else {
+            setMagic(getMagic() - magic_cost);
+            wizard.setLife(wizard.getLift() - attack_wizard);
+            System.out.print(wizard.getName()+"被"+getName()+"打了" + attack_wizard + "滴血\n");
+            if(wizard.getLift() <= 0) {
+                System.out.print(wizard.getName()+"被"+getName()+"打死了\n");
+                System.exit(0);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + getName() + "  Life: " + getLift() + "  Magic: " + getMagic() + "\n";
+    }
+}

@@ -1,0 +1,30 @@
+import java.security.*;
+
+public class Game {
+    private static final SecureRandom s = new SecureRandom();
+    public static void main(String[] args) throws Exception {
+        Warrior[] first = new Warrior[3];
+        Wizard[] second = new Wizard[3];
+        int i, choose, choose2;
+
+        for(i = 0; i < 3; i++) {
+            first[i] = new Warrior("戰士" + (i+1), 400, 100);
+            System.out.print(first[i]);
+        }
+
+        for(i = 0; i < 3; i++) {
+            second[i] = new Wizard("法師" + (i+1), 280, 200);
+            System.out.print(second[i]);
+        }
+
+        while(true) {
+            choose = s.nextInt(3);
+            choose2 = s.nextInt(3);
+            first[choose].NewMoon(second[choose2]);
+
+            choose = s.nextInt(3);
+            choose2 = s.nextInt(3);
+            second[choose].SmallFire(first[choose2]);
+        }
+    }
+}
