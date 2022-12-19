@@ -1,12 +1,5 @@
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.Panel;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.*;
+import java.awt.event.*;
 
 public class HW_AWT_1 {
     static Frame fra = new Frame("DSG Calculator");
